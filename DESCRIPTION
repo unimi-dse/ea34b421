@@ -1,6 +1,6 @@
 Package: citycostanalysis
 Type: Package
-Title: Cost of Living Compariso
+Title: Cost of Living Comparison
 Version: 0.1.0
 Author: Natalia Kartasheva
 Maintainer: Natalia Kartasheva <natalia.kartasheva@unimi.it>
@@ -8,5 +8,5 @@ Description: This app helps in comparing cost of living in different major citie
 License: Open
 Encoding: UTF-8
 LazyData: true
-Imports: shiny,shinythemes,dplyr,DT,here,tidyverse,ggplot2,jsonlite,roxygen2, xlsx,
-
+RoxygenNote: 7.0.2
+Imports:shinythemes,shiny,DT,here,tidyverse,ggplot2,jsonlite,roxygen2,dplyr,magrittr

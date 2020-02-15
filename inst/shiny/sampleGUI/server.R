@@ -1,9 +1,12 @@
+
 server <- function(input, output,session) {
+#even after defining packages in namespace with roxygen and decription file,
+  #dplyr was not picking up pipe function(%>%) so in the end,had to introduce
+  #librray of dplyr in the server,after many attempts.
 
-library(dplyr)
 library(magrittr)
-
-  filter_city <- reactive ({costofliving %>%
+  library(dplyr)
+  filter_city <- reactive ({ citycostanalysis::costofliving %>%
       filter(city %in% input$City)
 
 
@@ -11,10 +14,10 @@ library(magrittr)
 
 
   filter_total <-  reactive({total %>%
-      filter(city %in% input$City)})
+      filter(citycostanalysis::city %in% input$City)})
 
   graph_total <- reactive({tot %>%
-     filter(Total %in% input$City)})
+     filter(citycostanalysis::Total %in% input$City)})
 
   output$mtble <- DT::renderDataTable({
     DT::datatable(data = filter_city() , options = list(pageLength = 10),
@@ -28,7 +31,7 @@ library(magrittr)
 
   })
 
- reactive_data = reactive({total %>%
+ reactive_data = reactive({citycostanalysis::total %>%
       filter(city %in% input$City)
 
   })
@@ -39,7 +42,7 @@ library(magrittr)
 
     our_data <- reactive_data()
 
-    ggplot2::ggplot(our_data, ggplot2::aes(x=Cities , y=total),
+    ggplot2::ggplot( our_data, ggplot2::aes(x=Cities , y=total),
            ylab="Total",
            xlab=" Cities",
            names.arg = c(input$city))+

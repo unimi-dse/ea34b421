@@ -1,28 +1,52 @@
-Cost Of Living Comparison Analysis of Major Cities in the world, This
-project offers a tool that is useful in order to compare Cost of Living
-= the most important Cities of the world .the data involves yearly cost
-and includes almost all the expenses.
+# ea34b421
 
-Excel file containing data has been collected by Kaggle.com, a website
-that offers open datasets for analysis.
+<h1 align="center">Cost of Living in Major Cities of World </h1>
+<p> This app helps in checking various cost and expenses incured in different cities of the world and also helps in comparing among different cities 
+<br>
+  
 
-Install \# first install the R package “devtools” if not installed
-devtools::install\_github(“unimi-dse/”)  
-Usage
-# load the package
+<h2> Installation</h2>
+
+```R
+# first install the R package "devtools" if not installed (install.packages("devtools")
+devtools::install_github('unimi-dse/ea34b421')
+```
+
+<h2> Usage</h2>
+<p> Load the package. </p>
+
+```R
 require(citycostanalysis)
-sampleGUI()
+```
+<p> There are three exported function in the package that are <code> pollution()</code> and <code> restfullAPI()</code>.</p>
+
+<h3> Functions </h3>
+<p> Run the Shiny  application. </p>
+<li><code> sampleGui() </code></li>
 
 
-The app is structured on three tabs:
+<h2> Technologies </h2>
 
-First tab:
+- Shiny App: interactive web apps
+- R language
 
-You can select Multiple cities, and look the Totalyearly cost of living
-of particular cities,and can compare.You will also see a visual ggplot
-graph which will make it easier to compare.
 
-Second tab:
+<h3> Tab 1 : Comparison Graph </h3>
 
-Second tab,containes detailed data of various expenses inccured ,and you
-can compare with mutiple cities of your choice.
+<p> Comparison Graph shows
+Data table of total cost of living of the selected cities and help in comparing the costs
+
+Graph - Bar graph to give overview of Costs of different Cities
+
+
+
+
+
+
+
+
+<h3> Second Tab : Data </h3>
+
+<p> This Tab shows explaoned data table of various expenses incurred in the selected cities and help in comparing the costs.
+</p>
+
